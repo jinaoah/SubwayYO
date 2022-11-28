@@ -50,7 +50,22 @@ class GameManger:
         self.window.mainloop() # window 종료할 때까지 계속 실행
 
     def set(self): #이미지, 게임 기본 세팅
-        pass
+        self.topBacon = PhotoImage(file = "img\베이컨.png")
+        self.topPickle = PhotoImage(file = "img\피클.png")
+        self.topLettuce = PhotoImage(file = "img\양상추.png")
+        self.topUpBread = PhotoImage(file = "img\위빵.png")
+        self.topDownBread = PhotoImage(file = "img\아래빵.png")
+        self.topTomato = PhotoImage(file = "img\토마토.png")
+
+        # 메이킹 라벨 이미지
+
+        self.backgroundImg = PhotoImage(file = "img\gameBackground")
+        self.gameCnvs.create_image(450,300, image = self.backgroundImg)
+        self.selectCnvs = Canvas(self.gameCnvs, bd =1 , bg = "pink")
+        self.selectCnvs.place(x=150,y=20)
+        
+        # 버튼
+        self.topBaconBtn = Button(self.window)
 
     def startBtnClick(self):
         for x in range(10) :
