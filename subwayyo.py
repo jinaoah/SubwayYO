@@ -48,7 +48,7 @@ class GameManger:
                     command=self.startBtnClick)
         startBtn.place(x=246,y=520)
         
-        ruleBtn = Button(self.startCnvs, text="게임 설명", bg="brown",fg="white",font=('Hack',20, "bold"))
+        ruleBtn = Button(self.startCnvs, text="게임 설명", bg="brown",fg="white",font=('Hack',20, "bold"), command=self.ruleWindow)
         ruleBtn.place(x=560, y=520)
         
         self.window.bind('<KeyPress>',self.key)
@@ -105,6 +105,13 @@ class GameManger:
         self.upBreadBtn.focus_set()
         # self.buttonLock()
 
+        # 샌드위치 사진 가져오기
+        self.goalImg1 = ImageTk.PhotoImage(file="img\sandwich1.png")
+        self.goalImg2 = ImageTk.PhotoImage(file="img\sandwich2.png")
+        self.goalImg3 = ImageTk.PhotoImage(file="img\sandwich3.png")
+        self.goalImg4 = ImageTk.PhotoImage(file="img\sandwich4.png")
+        self.goalImg5 = ImageTk.PhotoImage(file="img\sandwich5.png")
+
         # 샌드위치 주문서 캔버스
         self.orderSheet = Canvas(self.gameCnvs, bg="white", width=280, height=280)
         self.orderSheet.place(x=620, y=60)
@@ -127,6 +134,9 @@ class GameManger:
         if str == "upB" : self.make(self.topUpBread, "ub")
         elif str == "bacon" : self.make(self.topBacon, "p")
 
+    def ruleWindow(self):
+        global new
+        new = Toplevel()
 
     def startBtnClick(self):
         for x in range(10) :
