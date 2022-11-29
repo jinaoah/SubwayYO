@@ -248,9 +248,9 @@ class GameManger:
     # 샌드위치 한 개당 타이머 10초
     # 10초가 지나면 게임 종료
     # 10초가 되기 전에 샌드위치 완성 -> 다음 사진으로 이동
-    def timeSet(self, i): 
-        self.start = time.time()
-        self.end = titme.time()
+    # def timeSet(self, i): 
+    #     self.start = time.time()
+    #     self.end = time.time()
 
     def click(self, str):
         if str == "upBread" : self.make(self.topUpBread, "ub")
